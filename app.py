@@ -1,9 +1,10 @@
-import numpy as np
+#import numpy as np
 import cv2 as cv
-import os
-import pyttsx3
+#import os
+#import pyttsx3
 from werkzeug.utils import secure_filename
 #from camera import VideoCamera
+from playsound import playsound
 from flask import Flask,render_template,request,url_for,Response,stream_with_context,session,flash,make_response
 app = Flask(__name__, instance_relative_config=True, template_folder='template')
 app.secret_key="hello"
@@ -11,7 +12,7 @@ filenames=""
 message=""
 capacity=0
 capacity1=0
-@app.route('/hellos')
+@app.route('/')
 def hellos():
     return render_template('home.html')
     #app.debug="TRUE"
@@ -32,13 +33,22 @@ def gen1(image,capacity):
             rectangle=cv.putText(rectangle,'face num'+str(i),(x-20,y-10),cv.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),1)
         else:
             rectangle=cv.putText(rectangle,'exceeded',(50,50),cv.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),1)
+            playsound("/Users/saikscbs/Documents/project2/proj3/sai.mp3")
+            #engine = pyttsx3.init()
+            #engine.say('Limit Exceeded.')
+            #engine.runAndWait()
+            #engine.startLoop(True)
+            #engine.stop()
+            # engine.iterate() must be called inside Server_Up.start()
+            #Server_Up = threading.Thread(target = Comm_Connection)
+            #Server_Up.start()
+            #engine.endLoop()
+            #if engine._inLoop:
+            #engine.endLoop()
             #file = "w.wav"
             #print('playing sound using native player')
             #os.system("afplay " + file)
             #os.system("afplay sound.wav&")
-            engine = pyttsx3.init()
-            engine.say('Limit Exceeded.')
-            engine.runAndWait()
     imjpeg=cv.imencode('.jpg',rectangle)[1].tobytes()
     yield(b'--frame\r\n'+b'Content-Type: image/jpeg\r\n\r\n' + imjpeg + b'\r\n\r\n')
 @app.route('/through_images',methods=['GET','POST'])
@@ -119,10 +129,11 @@ def gen():
             if i<=capacity:
                 rectangle=cv.putText(rectangle,'face num'+str(i),(x-10,y-10),cv.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),2)
             else:
-                #rectangle=cv.putText(rectangle,'exceeded',(50,50),cv.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),2)
-                engine = pyttsx3.init()
-                engine.say('Limit Exceeded.')
-                engine.runAndWait()
+                rectangle=cv.putText(rectangle,'exceeded',(50,50),cv.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),2)
+                playsound("/Users/saikscbs/Documents/project2/proj3/sai.mp3")
+                #engine = pyttsx3.init()
+                #engine.say('Limit Exceeded.')
+                #engine.runAndWait()
             '''if i<=capacity:
                 message+=str("capacity is in limit")
             else:
