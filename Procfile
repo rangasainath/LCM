@@ -1,2 +1,1 @@
-Web: gunicorn app:checking
-web: gunicorn run:app
+web: gunicorn checking:app
