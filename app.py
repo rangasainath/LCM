@@ -1,9 +1,6 @@
 #import numpy as np
 import cv2 as cv
-#import os
-#import pyttsx3
 from werkzeug.utils import secure_filename
-#from camera import VideoCamera
 from playsound import playsound
 from flask import Flask,render_template,request,url_for,Response,stream_with_context,session,flash,make_response
 app = Flask(__name__, instance_relative_config=True, template_folder='template')
