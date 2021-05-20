@@ -65,12 +65,12 @@ def gen():
     face_cascade=cv.CascadeClassifier(cv.data.haarcascades+'haarcascade_frontalface_default.xml')
     eyes_cascade=cv.CascadeClassifier(cv.data.haarcascades+'haarcascade_eye.xml')
     cap=cv.VideoCapture(0)
-    d=cap.isOpened()
+    '''d=cap.isOpened()
     if d==1:
         pass
     else:
-        cap.Open()
-    cap=cv.VideoCapture(0)
+        cap.Open()'''
+    cap=cv.VideoCapture(1)
     count_img=0
     while (cap.isOpened() and count_img<=100):
         ret,img =cap.read()

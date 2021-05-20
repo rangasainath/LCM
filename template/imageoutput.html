@@ -26,20 +26,35 @@
    margin-bottom: 0px;
    margin-left: 0px;
    margin-top: 0px;
-
+   }
+   #button{
+    background:#4169E1;
+    border-radius: 5px;
+    border-color: #ADD8E6;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom:30px;
+  margin-left: 80px;
+  color:#ADD8E6;
+  align-items: center;
    }
         </style>
     </head>
     <body>
         <header>
-            <center><font style="color:#ADD8E6;font-size:60px;font-stretch:condensed;">IMAGE OUTPUT</font></center></br>
+            <center><font style="color:#ADD8E6;font-size:60px;font-stretch:condensed;">IMAGE OUTPUT</font></center>
+            <button id=button><a href="/hellos">Home</a></button>
             </br>
             </br>
             </br>
         </header>
+            
         <div id=image>
         <img src="/through_imagess" height="500px" width="660px">
     </div>
+
         <!---->
         <!--{% with message=get_flashed_messages() %}
             {% if message %}
