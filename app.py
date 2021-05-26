@@ -42,11 +42,11 @@ def through_images():
         l=0
         filenames+=secure_filename(f.filename)
         l=len(filenames)
-        f.save('/Users/saikscbs/Desktop/LCM/Upload_Folder/'+secure_filename(f.filename))
+        f.save('Upload_Folder/'+secure_filename(f.filename))
     return render_template('imageoutput.html')
 @app.route('/through_imagess')
 def through_imagess():
-    img=cv.imread('/Users/saikscbs/Desktop/LCM/Upload_Folder'+filenames) 
+    img=cv.imread('/Upload_Folder'+filenames) 
     return Response(stream_with_context(gen1(img,capacity1)),mimetype='multipart/x-mixed-replace; boundary=frame')
 @app.route('/through_video')
 def through_video():
