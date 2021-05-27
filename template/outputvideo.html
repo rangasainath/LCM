@@ -1,35 +1,75 @@
-<html>
-<head> 
-<title>Video Example</title>
-<style>
-      header{
-    padding-bottom:15px;
-    margin-top: 0px;
-      height:100px;
-      width:100%;
-      background-color:#4169E1;
-      position:absolute;
-    }
-    footer{
-   background-color:rgb(0,0,0,0.9);
-     color:grey;
-     padding-left:0px;
-     padding-bottom:0px;
-       padding-top:0px;
-       padding-bottom: 0px;
-     width:100%;
-     margin-right: 0px;
-   margin-bottom: 0px;
-   margin-left: 0px;
-   margin-top: 150px;
 
-   }
-   #textmessagevideo{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lift Capacity Management</title>
+    <style>
+      *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+         .container{
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            position: relative;
+          }
+          .title{
+            background-color: blueviolet;
+            width: 100%;
+            height: 80px;
+            box-shadow: 0px 0px 10px 10px gray;
+        }
+        .button1{
+            width:15%;
+            background-color: blueviolet;
+            border: none;
+            color:white;
+            border-radius:5px;
+            outline: none;
+            font-size: 15px;
+            padding:10px;
+            margin-top: 40px;
+            box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.4);    
+            transition: 0.75s; 
+            float :right;
+            margin-bottom: 150px;
+            margin-right: 100px;
+        } 
+            .button1:hover{
+            cursor: pointer;
+            background-color: white;
+            color:blueviolet;
+        }
+        .title-text{
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: azure;
+            margin-left:100px; 
+            padding-left:13px; 
+            transform: translateY(10px);
+            text-transform: uppercase;
+            border: 1px solid black;
+            border-radius: 40px;
+            border-left-width: 0;
+            border-right-width: 0;
+            border-top-width: 0;
+            box-shadow: 0 8px 6px -6px rgb(0, 0, 0);
+        }
+        #textmessagevideo{
        display:inline-block;
        height:360px;
        width: 620px;
-       padding-top: 200px;
-       padding-left: 250px;
+       padding-top: 10px;
+       padding-left: 50px;
        align-items: center;
 
    }
@@ -39,29 +79,15 @@
    #textmessage > *{
        flex-basis: 100%;
    }
-   #button{
-    background:#4169E1;
-    border-radius: 5px;
-    border-color: #ADD8E6;
-  padding-top:10px;
-  padding-bottom:10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom:30px;
-  margin-left: 80px;
-  color:#ADD8E6;
-  align-items: center;
-   }
-</style>
+       </style>
+   
 </head>
 <body>
-    <header>
-        <center><font style="color:#ADD8E6;font-size:60px;font-stretch:condensed;">VIDEO</font></center>
-        <button id=button><a href="/">Home</a></button>
-        </br>
-        </br>
-        </br>
-    </header>
+  <div class="container">
+        <div class="title">
+            <p class="title-text">Video Output</p>
+        </div>
+
     <div id=textmessagevideo>
     <div id=textmessage>
 <div id=text><h2>Video After Processing</h2></div>
@@ -75,49 +101,9 @@
 <img src="/detecting" type="video/webm" height="342" width="608">
 </div>
 </div>
-<!--{% for item in rows %}                                                                                                                                                                         
-<h1>{{ item }}</h1>                                                                                                                                                                            
-{% endfor %}-->
-<!--{% if x %}
-    <h2>{{ x }}</h2>
-{% else %}
-    <h2>some thing wrong</h2>
-{% endif%}-->
-<!--{% with message=get_flashed_messages() %}
-    {% if message %}
-        {% for msg in message%}
-        <h2>{{msg}}</h2>
-        {% endfor %}
-    {% else %}
-        <h2>Capacity is Stable</h2>
-    {% endif %}
-{% endwith %}-->
-
-<!--<img src="{{url_for('through_videos')}}" height="340" width="560">-->
-<!--<video width="560" height="560" controls> <source src="/through_videos" type="video/webm"></video>-->
-<!--<td><input type="button" name="submit" palceholder="stop"></td>-->
-<footer>
-    <ul>
-  <li><a style= "color:grey" href="https://www.gmail.com">GMAIL</a></li>
-  </br>
-  <li><a style= "color:grey" href="https://www.facebook.com">FACEBOOK</a></li>
-  </br>
-  <li><a style= "color:grey" href="https://www.instagram.com">instagram</a></li>
-    </br>
-  <li>PLEASE FOLLOW</li>
-  </br>
-  </ul>
-  <ul>
-  <!--<li>mascellenios </li>
-  <li>some thing</li>
-  <li>some thing</li>
-  <li>some thing</li>
-  <li>some thing</li>
-  <li>some thing</li>
-  <li>some thing</li>
-  <li>some thing</li>
-  <li>some thing</li>-->
-  </ul>
-  </footer>
+  <form action="/">
+     <input class="button1" type="submit" value="Return to Homepage"/>
+       </form>
+</div>
 </body>
 </html>
